@@ -1,0 +1,99 @@
+body{
+    margin:0;
+    font-size: 20px;
+
+}
+
+.frame{
+    display:flex;
+    background-color:rgb(184, 179, 179);
+    align-items: center;
+    height:30px;
+}
+
+.left{
+    flex:none;
+    width:50%;
+    justify-content: flex-start;
+}
+.desktop-menu{
+    display:flex;
+    flex:auto;
+    justify-content: flex-end;  
+}
+.mobile-menu{
+    display: none;
+    width: 50%;
+        
+}
+.item{
+    flex:none;
+    width: 100px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.welcome{
+  display:flex;
+  justify-content: center; 
+  align-items: center;
+  height:300px;
+  font-size: 30px;
+  background-color: rgb(88, 154, 241);
+}
+
+.section{
+    display:flex;   
+    justify-content: center;
+    
+}
+
+.content{   
+    flex:none;
+    flex-wrap: wrap;
+    width: 30px;
+    height:200px;
+    margin:20px;
+    background-color: rgb(246, 250, 253);
+    text-align: center;
+    vertical-align: bottom;
+}
+
+@media(max-width:1800px){
+    .section{
+        flex-wrap:wrap;
+    }
+    .content{
+        width: 20%;
+    }   
+}
+/*words need to be fixed*/
+@media(max-width:1200px){
+    .section{
+        flex-wrap:wrap;
+    }
+    .content{
+        width: 45%;
+    } 
+    .desktop-menu{
+        display: flex;
+    }
+    .mobile-menu{
+        display: none;        
+    }  
+}
+/*手機板*/
+@media(max-width:600px){
+    .content{
+        width: 90%;
+    }
+    .desktop-menu{
+        display: none;
+    }
+    .mobile-menu{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .popup{
+        display:block
+}
