@@ -38,14 +38,15 @@ body{
   justify-content: center; 
   align-items: center;
   height:300px;
-  font-size: 30px;
+  font-size: 40px;
   background-color: rgb(88, 154, 241);
 }
 
-
 .section{
-    display:flex;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items:center;
     margin-top: 20px;
     margin-right: auto; 
     margin-left: auto;
@@ -53,11 +54,10 @@ body{
 }
 
 .content{ 
-    flex:none;
-    flex-wrap: wrap;
+    flex: none;
     width: 280px;
-    height:200px;
-    margin:10px;
+    height: 100%;
+    margin: 10px;
     text-align: center; 
 }
 
@@ -67,20 +67,12 @@ body{
 }
 
 
-@media(max-width:1920px){
-    .section{
-        flex-wrap:wrap;
-    }
-    .content{
-        width: 20%;
-    }   
-}
-
 @media(max-width:1200px){
     .section{
-        flex-wrap:wrap;
+        width: 50%;      
     }
-    .content{
+   
+    .content {
         width: 45%;
     } 
     .desktop-menu{
@@ -90,10 +82,10 @@ body{
         display: none;        
     }  
 }
-/*手機板*/
+
 @media(max-width:600px){
     .content{
-        width: 90%;
+        width: 90%; 
     }
     .desktop-menu{
         display: none;
@@ -103,5 +95,5 @@ body{
         justify-content: flex-end;
     }
     .popup{
-        display:block
+        display:block;
 }
