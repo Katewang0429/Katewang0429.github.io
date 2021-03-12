@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat is the best</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Taipei Public Tourism Data</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
@@ -28,32 +26,7 @@
         <div class="text" id="content" onclick="change();">Welcome to Myhome </div>
     </div>
 
-    <div class="section">
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-        <div class="content"><img src="./Cat-Instagram-Captions.jpg" width="100%" height="80%"><br>
-            <span>This is Cat</span>
-        </div>
-    </div>
+    <div class="section" id="section"></div>
 
     <script>
         function change() {
@@ -78,9 +51,46 @@
 
         }
 
+        const url = 'https://data.taipei/api/v1/dataset/36847f3f-deff-4183-a5bb-800737591de5?scope=resourceAquire';
+
+        fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            let items = data.result.results;
+            let times = 1;
+            return items.map(function(item) {
+                if(times > 8) return;
+
+                var section = document.getElementById('section');
+                
+                var content = document.createElement('div');
+                content.className = "content";
+                
+                section.appendChild(content);
+
+                var newImg = document.createElement('img');
+                newImg.style.width = "100%";
+                newImg.style.height = "80%";
+                newImg.src = "http" + item.file.split("http")[1];
+
+                content.appendChild(newImg);
+
+                var heading = document.createElement('div');
+                heading.className = "heading";
+                content.appendChild(heading);
+                 
+                var textNode = document.createTextNode(item.stitle);
+                heading.appendChild(textNode);
+
+                times++;
+          })
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     </script>
 
 
-</body>
 
-</html>
+
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<script>
+
+function calculate(min, max){
+    let n = 1;
+	let result = min;
+	while (n < (max - min + 1)){
+		result = result + (min + n);
+		n++;
+	}
+console.log(result);
+}
+calculate(1, 3); // 你的程式要能夠計算 1+2+3，最後印出 6
+calculate(4, 8); // 你的程式要能夠計算 4+5+6+7+8，最後印出 30
+
+
+function avg(data){
+
+// 請用你的程式補完這個函式的區塊
+
+}
+	avg({
+		"count":3,
+		"employees":[
+		{
+			"name":"John",
+			"salary":30000
+		},
+		{
+			"name":"Bob",
+			"salary":60000
+		},	
+		{
+			"name":"Jenny",
+			"salary":50000
+		}
+		]
+	}); // 呼叫 avg 函式
+
+function maxProduct(nums){
+	var product = []
+	for (var i = 0; i < nums.length; i++) {
+		for (var j = i+1; j < nums.length; j++) {
+			product.push(nums[i]*nums[j]);
+		}
+	}
+	console.log(Math.max.apply(null, product));
+
+}
+maxProduct([5, 20, 2, 6]); // 得到 120 因為 20 和 6 相乘得到最大值
+maxProduct([10, -20, 0, 3]); // 得到 30 因為 10 和 3 相乘得到最大值
+
+function twoSum(nums, target){
+	for (var i = 0; i < nums.length; i++) {
+    	for (var j = i+1; j < nums.length; j++) {
+        	if (nums[i] + nums[j] == target) {
+                    return ('[' + i + ',' + j + ']')
+                    };
+                };
+            };
+        }
+result=twoSum([2, 11, 7, 15], 9)
+console.log(result) 
+
+</script>
+
+<body>
+	
+</body>
+</html>
