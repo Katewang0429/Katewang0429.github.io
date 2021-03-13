@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3</title>
+    <title>Taipei Public Tourism Data</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
@@ -19,56 +19,80 @@
             <div class="item">item 3</div>
             <div class="item">item 4</div>
         </div>
-
         <div class="mobile-menu" onclick="popup();">
             <img src="./fb-web-35-512.png" width="30" height="30">
         </div>
 
-        <div class="welcome">
-            <div class="text" id="content" onclick="change();">Welcome to Myhome </div>
-        </div>
+    </div>
 
-        <div class="section" id="section"> </div>
+    <div class="welcome">
+        <div class="text" id="content" onclick="change();">Welcome to Myhome </div>
+    </div>
 
-        <script>
-            const url = 'https://padax.github.io/taipei-day-trip-resources/taipei-attractions.json';
+    <div class="section" id="section"></div>
 
-            fetch(url)
-                .then((resp) => resp.json())
-                .then(function (data) {
-                    let items = data.result.results;
-                    let times = 1;
-                    return items.map(function (item) {
-                        if (times > 8) return;
+    <script>
+        function change() {
+            let elem = document.querySelector("#content");
+            if (elem.innerHTML == "Have a good time") {
+                elem.innerHTML = "Welcome to Myhome";
 
-                        var section = document.getElementById('section');
+            } else {
+                elem.innerHTML = "Have a good time";
+            }
 
-                        var content = document.createElement('div');
-                        content.className = "content";
+        }
+        function popup() {
+            let elem = document.querySelector("#popup");
+            elem.style.display = "block"
 
-                        section.appendChild(content);
+        }
 
-                        var newImg = document.createElement('img');
-                        newImg.style.width = "100%";
-                        newImg.style.height = "80%";
-                        newImg.src = "http" + item.file.split("http")[1];
+        function close1() {
+            let elem = document.querySelector("#popup");
+            elem.style.display = "none"
 
-                        content.appendChild(newImg);
+        }
 
-                        var heading = document.createElement('div');
-                        heading.className = "heading";
-                        content.appendChild(heading);
+        const url = 'https://data.taipei/api/v1/dataset/36847f3f-deff-4183-a5bb-800737591de5?scope=resourceAquire';
 
-                        var textNode = document.createTextNode(item.stitle);
-                        heading.appendChild(textNode);
+        fetch(url)
+            .then((resp) => resp.json())
+            .then(function (data) {
+                let items = data.result.results;
+                let times = 1;
+                return items.map(function (item) {
+                    if (times > 8) return;
 
-                        times++;
-                    })
+                    var section = document.getElementById('section');
+
+                    var content = document.createElement('div');
+                    content.className = "content";
+
+                    section.appendChild(content);
+
+                    var newImg = document.createElement('img');
+                    newImg.style.width = "100%";
+                    newImg.style.height = "80%";
+                    newImg.src = "http" + item.file.split("http")[1];
+
+                    content.appendChild(newImg);
+
+                    var heading = document.createElement('div');
+                    heading.className = "heading";
+                    content.appendChild(heading);
+
+                    var textNode = document.createTextNode(item.stitle);
+                    heading.appendChild(textNode);
+
+                    times++;
                 })
-                .catch(function (error) {
-                    console.log(error);
-                });
-      </script>
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    </script>
 
 </body>
+
 </html>
