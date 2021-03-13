@@ -27,8 +27,7 @@ function avg(data){
   var salary = 0;
   for (i = 0; i <= employees - 1; i++) {
     money = data.employees[i].salary;
-    salary += money;
-  
+    salary += money;  
   }
   console.log(salary / employees);
 }
