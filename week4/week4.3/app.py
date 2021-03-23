@@ -26,6 +26,7 @@ def signin():
 
 @app.route("/member", methods=['POST'])
 def member():
+    session['username'] = acctName
     return render_template('member.html')
 
 
