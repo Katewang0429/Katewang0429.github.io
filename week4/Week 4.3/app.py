@@ -29,8 +29,8 @@ def member():
     return render_template('member.html')
 
 
-@app.route('/logout')
-def logout():
+@app.route("/signout", methods=['GET'])
+def signout():
     session.pop('username', None)
     return redirect(url_for('index'))
 
