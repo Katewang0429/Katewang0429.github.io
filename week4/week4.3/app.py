@@ -24,9 +24,8 @@ def signin():
     return render_template('error.html')
 
 
-@app.route("/member", methods=['POST'])
+@app.route("/member", methods=['GET'])
 def member():
-    session['username'] = acctName
     return render_template('member.html')
 
 
