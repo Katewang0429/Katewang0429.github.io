@@ -11,15 +11,20 @@ INSERT INTO user(id,name,username,password) VALUES (0, "cat4", "black", "00000")
 select * from user;</br>
 <img src="https://user-images.githubusercontent.com/64306646/112637291-f1ddd980-8e78-11eb-82f2-6783d7b8cffd.png" width="300" height="150">
 
-
 ● 使用 SELECT 指令取得 user 資料表中總共有幾筆資料。
 select count(1) as count from user;
-![image](https://user-images.githubusercontent.com/64306646/112639685-82b5b480-8e7b-11eb-8090-271aa530e8a4.png)
+<img src="https://user-images.githubusercontent.com/64306646/112639685-82b5b480-8e7b-11eb-8090-271aa530e8a4.png" width="300" height="150">
 
 ● 使用 SELECT 指令取得所有在 user 資料表中的使用者資料，並按照 time 欄位，由近到遠排序。
+select * from user order by time desc;
+![image](https://user-images.githubusercontent.com/64306646/112646518-87ca3200-8e82-11eb-88a0-3e67b423da0f.png)
+
 
 
 ● 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。
+select * from user order by time limit 3 offset 1;
+![image](https://user-images.githubusercontent.com/64306646/112646637-ab8d7800-8e82-11eb-9d3a-c05c8ba4e95d.png)
+
 
 
 ● 使用 SELECT 指令取得欄位 username 是 ply 的使用者資料。
