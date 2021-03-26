@@ -1,9 +1,9 @@
 ●使用 INSERT 指令新增一筆資料到 user 資料表中，這筆資料的 username 和password 欄位必須是 ply。接著繼續新增至少 4 筆隨意的資料。
-INSERT INTO user(id,name,username,password) VALUES (0, "user", "ply", "ply");
-INSERT INTO user(id,name,username,password) VALUES (0, "cat1", "cute", "12345");
-INSERT INTO user(id,name,username,password) VALUES (0, "cat2", "adorable", "54321");
-INSERT INTO user(id,name,username,password) VALUES (0, "cat3", "funny", "11111");
-INSERT INTO user(id,name,username,password) VALUES (0, "cat4", "black", "00000");
+INSERT INTO user(id,name,username,password) VALUES (0, "user", "ply", "ply");</br>
+INSERT INTO user(id,name,username,password) VALUES (0, "cat1", "cute", "12345");</br>
+INSERT INTO user(id,name,username,password) VALUES (0, "cat2", "adorable", "54321");</br>
+INSERT INTO user(id,name,username,password) VALUES (0, "cat3", "funny", "11111");</br>
+INSERT INTO user(id,name,username,password) VALUES (0, "cat4", "black", "00000");</br>
 
 <img src="https://user-images.githubusercontent.com/64306646/112638631-6c5b2900-8e7a-11eb-9e23-15716b4b6fd1.png" width="300" height="150">
 
