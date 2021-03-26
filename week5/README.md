@@ -13,7 +13,8 @@ select * from user;</br>
 
 
 ● 使用 SELECT 指令取得 user 資料表中總共有幾筆資料。
-
+select count(1) as count from user;
+![image](https://user-images.githubusercontent.com/64306646/112639685-82b5b480-8e7b-11eb-8090-271aa530e8a4.png)
 
 ● 使用 SELECT 指令取得所有在 user 資料表中的使用者資料，並按照 time 欄位，由近到遠排序。
 
