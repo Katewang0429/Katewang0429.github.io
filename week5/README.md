@@ -37,7 +37,10 @@ select * from user where username='ply' and password='ply';</br>
 
 ● 使用 UPDATE 指令更新欄位 username 是 ply 的使用者資料，將資料中的 name 欄位改成【丁滿】。
 update user set name='丁滿' where username='ply';</br>
-<img src="https://user-images.githubusercontent.com/64306646/112648447-80a42380-8e84-11eb-8611-ec3967ce03dc.png)
+<img src="https://user-images.githubusercontent.com/64306646/112648447-80a42380-8e84-11eb-8611-ec3967ce03dc.png" width="300" height="150">
 
 
 ● 使用 DELETE 指令刪除所有在 user 資料表中的資料。
+delete from user;
+<img src="https://user-images.githubusercontent.com/64306646/112649304-45eebb00-8e85-11eb-8e6f-556583c9b669.png"width="300" height="150">
+
