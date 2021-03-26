@@ -1,8 +1,15 @@
 ●使用 INSERT 指令新增一筆資料到 user 資料表中，這筆資料的 username 和password 欄位必須是 ply。接著繼續新增至少 4 筆隨意的資料。
-<img src="https://user-images.githubusercontent.com/64306646/112637291-f1ddd980-8e78-11eb-82f2-6783d7b8cffd.png" width="300" height="150">
+INSERT INTO user(id,name,username,password) VALUES (0, "user", "ply", "ply");
+INSERT INTO user(id,name,username,password) VALUES (0, "cat1", "cute", "12345");
+INSERT INTO user(id,name,username,password) VALUES (0, "cat2", "adorable", "54321");
+INSERT INTO user(id,name,username,password) VALUES (0, "cat3", "funny", "11111");
+INSERT INTO user(id,name,username,password) VALUES (0, "cat4", "black", "00000");
 
+<img src="https://user-images.githubusercontent.com/64306646/112638631-6c5b2900-8e7a-11eb-9e23-15716b4b6fd1.png" width="300" height="150">
 
 ● 使用 SELECT 指令取得所有在 user 資料表中的使用者資料。
+select * from user;
+<img src="https://user-images.githubusercontent.com/64306646/112637291-f1ddd980-8e78-11eb-82f2-6783d7b8cffd.png" width="300" height="150">
 
 
 ● 使用 SELECT 指令取得 user 資料表中總共有幾筆資料。
