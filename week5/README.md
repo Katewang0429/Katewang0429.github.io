@@ -1,5 +1,5 @@
 ●使用 INSERT 指令新增一筆資料到 user 資料表中，這筆資料的 username 和password 欄位必須是 ply。接著繼續新增至少 4 筆隨意的資料。
-<img src="https://user-images.githubusercontent.com/64306646/112637291-f1ddd980-8e78-11eb-82f2-6783d7b8cffd.png" width="600" height="300">
+<img src="https://user-images.githubusercontent.com/64306646/112637291-f1ddd980-8e78-11eb-82f2-6783d7b8cffd.png" width="300" height="150">
 
 
 ● 使用 SELECT 指令取得所有在 user 資料表中的使用者資料。
