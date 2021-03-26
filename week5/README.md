@@ -1,4 +1,4 @@
-●使用 INSERT 指令新增一筆資料到 user 資料表中，這筆資料的 username 和password 欄位必須是 ply。接著繼續新增至少 4 筆隨意的資料。
+<b>●使用 INSERT 指令新增一筆資料到 user 資料表中，這筆資料的 username 和password 欄位必須是 ply。接著繼續新增至少 4 筆隨意的資料。</b></br>
 INSERT INTO user(id,name,username,password) VALUES (0, "user", "ply", "ply");</br>
 INSERT INTO user(id,name,username,password) VALUES (0, "cat1", "cute", "12345");</br>
 INSERT INTO user(id,name,username,password) VALUES (0, "cat2", "adorable", "54321");</br>
