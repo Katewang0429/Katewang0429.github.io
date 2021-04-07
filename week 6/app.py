@@ -5,7 +5,7 @@ app = Flask(__name__)
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="nn101586501",
+    password="@@shine1234",
     database="website"
 )
 
@@ -65,7 +65,7 @@ def member():
     if user != None:
         session['username'] = user[1]
         return render_template('member.html', user=user[1])
-    return redirect(url_for('error', message="未註冊帳號 或 帳號或密碼輸入錯誤"))
+    return redirect(url_for('error', message="帳號或密碼輸入錯誤"))
 
 
 @app.route('/error')
