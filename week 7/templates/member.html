@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="canonical" href="https://flask-membership-with-api.herokuapp.com" />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <title>Membership Page</title>
+</head>
+
+<body>
+  <div class="heading">
+    <h2>歡迎光臨，這是會員頁</h2>
+  </div>
+  
+  <div class="content">
+    <h2>{{user}}，歡迎登入系統</h2>
+    <p>
+      <a href="/logout">登出系統</a>
+    </p>
+
+    <h2>查詢會員姓名</h2>
+    <p>
+      <input type="text" class="flask-input" id="search_username">
+      <input type="button" value="查詢" id="search_button">
+      <p id="user_info"></p>
+    </p>
+  </div>
+
+</body>
+
+<script>
+  $("#search_button").click(function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: "/api/users",
+      method: "GET",
+      dataType: "json",
+      data: {
+        username: $("#search_username").val(),
+      },
+      success: function (res) {
+        
+        json = JSON.parse(JSON.stringify(res));
+        if (json["data"] != null)
+          user_info = json["data"][0].name + "(" + json["data"][0].username + ")";
+        else
+          user_info = "查無此帳號";
+        $("#user_info").text(user_info);
+      },
+      error: function (err) {
+        console.log(err)
+      },
+    })
+  })
+</script>
+
+</html>
