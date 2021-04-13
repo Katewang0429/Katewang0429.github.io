@@ -27,9 +27,7 @@ def index():
         return redirect(url_for('member', user=user))
     return redirect(url_for('signin'))
 
-# 透過python 建立api
-
-
+# 建立api
 @ app.route("/api/users", methods=['GET', 'POST'])
 def users():
     user = []  # []list
@@ -57,7 +55,7 @@ def users():
     else:
         result = dict(data=None)
 
-    return jsonify(result)  # result 值為字典，再轉為json 格式
+    return jsonify(result)  # result 值為字典，轉為json格式
 
 
 @ app.route("/signin", methods=['GET', 'POST'])
